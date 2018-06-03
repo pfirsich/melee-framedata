@@ -3,12 +3,15 @@ import re
 import sys
 import json
 import math
+import datetime
 
 from ruamel.yaml import YAML
 yaml = YAML()
 
 from generalMoveNames import generalMoveNames
 from generateFrameGraph import getFrameGraph
+
+generatedAt = datetime.datetime.utcnow().strftime("%H:%M:%S UTC on %B %d, %Y")
 
 with open("moveNames.json") as f:
     moveNames = json.load(f)
@@ -42,6 +45,8 @@ def write(path, content):
         f.write(content)
 
 def template(sourceFile, **kwargs):
+    kwargs["generatedAt"] = generatedAt
+
     if not os.path.isfile(sourceFile):
         #print("Template '{}' does not exist!".format(sourceFile))
         return ""
