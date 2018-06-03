@@ -1,0 +1,79 @@
+externalName: "Samus"
+pathName: "samus"
+gfycatLinks:
+    jab1: AnguishedGracefulArgali
+    jab2: IdealLeanAmazondolphin
+    ftilt_h: GrimUglyAdmiralbutterfly
+    ftilt_m: DimwittedSpitefulIcefish
+    ftilt_l: BasicMarriedAtlanticsharpnosepuffer
+    utilt: CircularConventionalHorseshoebat
+    dtilt: RecklessBlindKinkajou
+    dashattack: PointlessComfortableDrever
+    grab: CloudyEssentialBarbet
+    dashgrab: DefiantFrenchGrayling
+    fsmash_h: ThreadbareKaleidoscopicApatosaur
+    fsmash_m: ForkedConstantBushbaby
+    fsmash_l: JaggedUnkemptBarasinga
+    usmash: VastValidFinnishspitz
+    dsmash: BlissfulVeneratedFluke
+    nair: AnotherTestyImperatorangel
+    fair: ArcticCrazyDog
+    bair: AcidicVictoriousBrownbutterfly
+    uair: SlowFantasticAnchovy
+    dair: AdolescentElaborateFurseal
+    zair: PerkyReasonableGlowworm
+    fthrow: FoolhardySpanishIsopod
+    bthrow: ThornySickDogwoodtwigborer
+    uthrow: MistySpotlessAnemone
+    dthrow: FloweryScarceBlackbird
+    sspecial_air: KeyLikelyAppaloosa
+    sspecial_smash_air: TornFamousEyelashpitviper
+    dspecial_air: WellwornScrawnyJay
+    sspecial: PleasedIdenticalArmyworm
+    nspecial_shoot_air: HalfExcellentFlickertailsquirrel
+    nspecial_start_air: ConventionalFocusedIguanodon
+    nspecial_start: CluelessElatedChupacabra
+    nspecial_charge: FarBlackandwhiteAfricanrockpython
+    nspecial_shoot: BonyZigzagChameleon
+    dspecial: GiddyAmusingFlamingo
+    sspecial_smash: MilkyCraftyFeline
+    uspecial: BitterDaringArthropods
+    uspecial_air: TatteredDigitalConure
+moveGroups:
+    nspecial:
+        - nspecial_start
+        - nspecial_charge
+        - nspecial_cancel
+        - nspecial_shoot
+        - nspecial_start_air
+        - nspecial_shoot_air
+    sspecial:
+        - sspecial
+        - sspecial_smash
+        - sspecial_air
+        - sspecial_smash_air
+    dspecial:
+        - dspecial_hit
+        - dspecial_hit_air
+        - dspecial
+        - dspecial_air
+    uspecial:
+        - uspecial
+        - uspecial_air
+moveNames:
+    nspecial_start: "Start"
+    nspecial_charge: "Charge"
+    nspecial_cancel: "Cancel"
+    nspecial_shoot: "Shoot"
+    nspecial_start_air: "Start (Air)"
+    nspecial_shoot_air: "Shoot (Air)"
+    sspecial: "Homing Missle"
+    sspecial_smash: "Super Missile"
+    sspecial_air: "Normal Missile (Air)"
+    sspecial_smash_air: "Super Missile (Air)"
+    dspecial_hit: "Hit by Bomb"
+    dspecial_hit_air: "Hit by Bomb (Air)"
+    dspecial: "Drop Bomb"
+    dspecial_air: "Drop Bomb (Air)"
+    uspecial: "Ground"
+    uspecial_air: "Air"
