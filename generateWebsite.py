@@ -4,6 +4,7 @@ import sys
 import json
 import math
 import datetime
+import shutil
 
 from ruamel.yaml import YAML
 yaml = YAML()
@@ -343,6 +344,9 @@ def generateCharacter(character):
         generateMovePage(charConfig, moveGroupName, moves)
 
 def main():
+    shutil.copy2("source/style.css", "output")
+    shutil.copy2("source/frameGraph.css", "output")
+
     generateIndexSite()
 
     for character in sorted(charConfigs):
