@@ -1,5 +1,126 @@
 externalName: "Marth"
 pathName: "marth"
-gfycatLinks: {}
-moveGroups: {}
-moveNames: {}
+gfycatLinks:
+    jab1: MetallicFlawedAfricanbushviper
+    jab2: EmptyFirsthandHuia
+    ftilt_m: SmugChubbyJackrabbit
+    utilt: EnergeticDarkEeve
+    dtilt: CreepyVeneratedGreatwhiteshark
+    fsmash_m: DirectBruisedFly
+    usmash: CheapOrderlyHarborporpoise
+    dsmash: ApprehensiveFormalDassierat
+    dashattack: TartLikelyClam
+    grab: ColossalIllegalAmazontreeboa
+    dashgrab: EllipticalFairJabiru
+    nair: BitesizedPolishedEchidna
+    fair: EveryNeedyBlackrussianterrier
+    bair: ViciousThickCaterpillar
+    uair: MerryBelovedFlyingfish
+    dair: VigilantSeriousAmericanalligator
+    fthrow: PoisedTimelyCrossbill
+    bthrow: CoordinatedElegantCarpenterant
+    uthrow: EvilConcreteKakarikis
+    dthrow: SnappyIllCanine
+
+    nspecial_start:
+    nspecial_loop:
+    nspecial_end: PlayfulGlisteningBadger
+    nspecial_end_full: GiantSecondCanvasback
+    nspecial_start_air:
+    nspecial_loop_air:
+    nspecial_end_air: UnawareAbsoluteKilldeer
+    nspecial_end_full_air: UnsungWhimsicalGiantschnauzer
+    sspecial_1: FirmCourageousIndianpalmsquirrel
+    sspecial_2_U: CompetentFrayedFallowdeer
+    sspecial_2_NSD: OddballWatchfulHeron
+    sspecial_3_U: InbornMistyJay
+    sspecial_3_NS: WaryOnlyIrishdraughthorse
+    sspecial_3_D: UnawareDistinctHairstreak
+    sspecial_4_U: NewPortlyEyelashpitviper
+    sspecial_4_NS: PoliteGloomyAmethystgemclam
+    sspecial_4_D: MiserlyUnacceptableAnophelesmosquito
+    sspecial_1_air: FlakyRipeAmethystgemclam
+    sspecial_2_U_air: SmallChubbyInsect
+    sspecial_2_NSD_air: ElaborateMammothIguanodon
+    sspecial_3_U_air: MenacingOptimisticFluke
+    sspecial_3_NS_air: DeficientFittingIberianmidwifetoad
+    sspecial_3_D_air: EmbellishedSandyCornsnake
+    sspecial_4_U_air: InsignificantObedientIzuthrush
+    sspecial_4_NS_air: ChiefFrightenedBlobfish
+    sspecial_4_D_air: OptimalBothGreathornedowl
+    uspecial: DisguisedDemandingJapanesebeetle
+    uspecial_air: ImportantGentleChrysalis
+    dspecial: CharmingEnormousDragonfly
+    dspecial_hit: DecentAngryIberianmole
+    dspecial_air: WeePleasantGnatcatcher
+    dspecial_hit_air: PleasingUnconsciousHairstreak
+moveGroups:
+    nspecial:
+        - nspecial_start
+        - nspecial_loop
+        - nspecial_end
+        - nspecial_end_full
+        - nspecial_start_air
+        - nspecial_loop_air
+        - nspecial_end_air
+        - nspecial_end_full_air
+    sspecial:
+        - sspecial_1
+        - sspecial_2_U
+        - sspecial_2_NSD
+        - sspecial_3_U
+        - sspecial_3_NS
+        - sspecial_3_D
+        - sspecial_4_U
+        - sspecial_4_NS
+        - sspecial_4_D
+        - sspecial_1_air
+        - sspecial_2_U_air
+        - sspecial_2_NSD_air
+        - sspecial_3_U_air
+        - sspecial_3_NS_air
+        - sspecial_3_D_air
+        - sspecial_4_U_air
+        - sspecial_4_NS_air
+        - sspecial_4_D_air
+    dspecial:
+        - dspecial
+        - dspecial_hit
+        - dspecial_air
+        - dspecial_hit_air
+    uspecial:
+        - uspecial
+        - uspecial_air
+moveNames:
+    nspecial_start: "Start"
+    nspecial_loop: "Charge"
+    nspecial_end: "End"
+    nspecial_end_full: "End (Fully Charged)"
+    nspecial_start_air: "Start (Air)"
+    nspecial_loop_air: "Charge (Air)"
+    nspecial_end_air: "End (Air)"
+    nspecial_end_full_air: "End (Fully Charged, Air)"
+    sspecial_1: "1st"
+    sspecial_2_U: "2nd, Up"
+    sspecial_2_NSD: "2nd, Neutral/Side/Down"
+    sspecial_3_U: "3rd, Up"
+    sspecial_3_NS: "3rd, Neutral/Side"
+    sspecial_3_D: "3rd, Down"
+    sspecial_4_U: "4th, Up"
+    sspecial_4_NS: "4th, Neutral/Side"
+    sspecial_4_D: "4th, Down"
+    sspecial_1_air: "1st (Air)"
+    sspecial_2_U_air: "2nd, Up (Air)"
+    sspecial_2_NSD_air: "2nd, Neutral/Side/Down (Air)"
+    sspecial_3_U_air: "3rd, Up (Air)"
+    sspecial_3_NS_air: "3rd, Neutral/Side (Air)"
+    sspecial_3_D_air: "3rd, Down (Air)"
+    sspecial_4_U_air: "4th, Up (Air)"
+    sspecial_4_NS_air: "4th, Neutral/Side (Air)"
+    sspecial_4_D_air: "4th, Down (Air)"
+    uspecial: "Ground"
+    uspecial_air: "Air"
+    dspecial: "Ground (No Hit)"
+    dspecial_hit: "Ground (Hit)"
+    dspecial_air: "Air (No Hit)"
+    dspecial_hit_air: "Air (Hit)"

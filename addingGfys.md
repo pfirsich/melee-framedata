@@ -20,8 +20,8 @@ python applyPatch.py patchData-zerogravity-disablegrabs.json "<path to possibly 
 ### Alternative way
 If you don't want to install Python or this seems to complicated for you, you can also use a tool like [GC Rebuilder](https://www.romhacking.net/utilities/619/) (or similar) or even the [gciso](https://github.com/pfirsich/gciso) command line interface (Python 3 still required though) and replace a single character .dat file with a patched version. I uploaded the patched character dat files here: [hitbox-damage-colors](http://melee.theshoemaker.de/?dir=hitbox-damage-colors).
 
-## Recording in-game
-First turn on debug mode by pressing Pause and then D-Pad Left twice, then unpause with X + D-Pad Up.
+## Recording
+First turn on debug mode by pressing Pause and then D-Pad Right twice, then unpause with X + D-Pad Up.
 
 If you are using the `--zerogravity` version:
 * To Toggle frame advance on to not accidentally jump or something press the Pause button
@@ -41,36 +41,41 @@ Shared setup:
 * Toggle player menu off again: D-Pad Down
 * Turn on action state display: Y + D-Pad Down
 
-Then set up the in-game camera according to the move you want to record and use a recording software of your choice (I use [Open Broadcaster Software](https://obsproject.com/)) and record your character performing that move. Make sure there are is a bit of a neutral state just before and after the attack so you have some leeway when cutting the videos. You may also record separate videos (i.e. restart the recording inbetween) for different groups of moves (smashes/tilts/aerials/etc.) to help organizing and make cutting easier later.
+Then set up the camera, start from a neutral state (e.g. `FALL` or `WAIT`), toggle frame advance on (by pressing start) and make a screenshot for every frame of the move (make sure to include a frame of the neutral state at the start and the end of the move.
 
-### Tips
+### Other notes
 * The map I used, because it doesn't have an annoying background, enough space and a platform is `Hacked Stages -> Green Greens`
 * For many moves using camera mode `Free` in `Training Mode` is sufficient, but sometimes you need to use the 20XX camera toggles (pan/zoom/rotate). These only work in `VS. Mode/Melee` though!
-* With `--zerogravity` you should probably airdodge onto a platform at the start and then just walk off and record the moves.
+* With `--zerogravity` you should probably airdodge onto a platform at the start and then just walk off to record aerial moves.
 * Record facing right, so the angle indicators are correct
 * Record throws without `--zerogravity` and without `--disablegrabs` (only patched hitbox colors) (so you can actually grab another character and to make them fly representatively)
 * Record aerials with the `--zerogravity` version (also aerial specials)
 * Record grabs with the `--disablegrabs` version (so the hitboxes are not just always purple)
 * [20XX Toggles](https://www.reddit.com/r/smashbros/comments/7ecgaj/20xx_407_complete_cheat_sheet_with_all_shortcut/)
 
-## Cutting the videos
-If you already know how to cut parts out of a video, do it however you like. If not, you can download the free [ffmpeg](https://www.ffmpeg.org/), one of the most amazing pieces of software I know, and cut a part out of a video like so:
+## Turning the screenshots into videos
+I highly recommend placing the screenshots for each move in a separate folder. Then you need to rename them `1.png`, `2.png`, `..`. I used some Python helper scripts for this, which you can find here:
+
+https://gist.github.com/pfirsich/5e8e5fff777f7f426d88591ade7db44b
+
+Then you need to turn these images into videos for which I used [ffmpeg](https://www.ffmpeg.org/), which I consider to be another wonder of the world, like so:
+
 ```console
-ffmpeg -i <source_video> -c:v libx264 -an -y -ss 0.0 -t 1.0 <outfile>
+ffmpeg -r 60 -i "<source directory>/%d.png" -y -c:v libx264 -vf "format=yuv420p" -r 60 "<outfile>.mp4"
 ```
-* `-i <source_video>` insert the path to the real source video here
-* `-c:v libx264` sets the output encoding to x264 (you need to re-encode for exact cuts!)
-* `-an` removes the audio stream
-* `-y` tells ffmpeg to overwrite the output file without asking
-* `-ss` the start time in seconds (a decimal number)
-* `-t` the duration of the part you want to cut out in seconds
-* `<outfile>` replace this with the path to your output file
+* `-r 60` sets the rate of input screenshots to 60 fps.
+* `-i "<source directory>/%d.png"` insert the path to the directory containing the screenshots here.
+* `-y` tells ffmpeg to overwrite the output file without asking.
+* `-c:v libx264` sets the output encoding to x264.
+* `-vf "format=yuv420p"` sets the pixel format.
+* `-r 60` sets the output rate of the video to 60 fps.
+* `"<outfile>.mp4"` replace this with the name of the output file.
 
 ## Getting it on the website
 When you have a folder full of videos, you can make an account on [gfycat.com](https://gfycat.com/) and upload them there.
 
 To add them to the move pages you can either open an issue on the GitHub issue tracker (or send me an E-Mail) with a link to the gfycat album, or you can add it yourself by forking this repository, modifying the config file for the character you want to add gfys for (Example: [Samus' config](https://github.com/pfirsich/melee-framedata/blob/master/source/Samus/config.yaml)) and sending a pull request (obviously this is less work for me and therefore preferred)!
 
-## Including Specials
+## Including specials
 For specials most of this is the same, but as you might have noticed the special move pages for most characters lead to a `404 - Not Found`. This is because for most characters it is not configured which subactions belong to which special. You may add that information to the character configs (see [Samus' config](https://github.com/pfirsich/melee-framedata/blob/master/source/Samus/config.yaml) on how that would look). Also you may extend [meleeFrameDataExtractor](https://github.com/pfirsich/meleeFrameDataExtractor) (see ToDo) with proper subaction names, instead of just the hex ids.
 
