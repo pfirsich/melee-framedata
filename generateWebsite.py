@@ -17,8 +17,8 @@ generatedAt = datetime.datetime.utcnow().strftime("%H:%M:%S UTC on %B %d, %Y")
 with open("moveNames.json") as f:
     moveNames = json.load(f)
 
-#gfycatEmbed = "<div style='margin:0.5em 0 0.5em 0;position:relative;padding-bottom:54%'><iframe src='https://gfycat.com/ifr/{}' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0' allowfullscreen></iframe></div>"
-gfycatEmbed = "<div class='gfyitem' data-controls=true data-title=true data-responsive=true data-playback-speed=0.5 data-id={}></div>"
+# "Responsive IFrame"
+gfycatEmbed = "<div style='position:relative; padding-bottom:calc(56.25% + 44px)'><iframe src='https://gfycat.com/ifr/{id}?autoplay=1&controls=1&hd=1&speed=0.5' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>"
 
 frameData = {}
 frameDataPath = os.environ["FRAMEDATA"]
@@ -247,7 +247,7 @@ def getMoveContent(charConfig, moveName, moveData):
 
     gfycatLink = charConfig["gfycatLinks"].get(moveName, None)
     if gfycatLink:
-        content += gfycatEmbed.format(gfycatLink) + "\n\n"
+        content += gfycatEmbed.format(id=gfycatLink) + "\n\n"
 
     content += getSummaryTable(moveData)
 
